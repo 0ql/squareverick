@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Squareverick</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			margin: 0;
+			box-sizing: border-box;
+			width: 100vw;
+			height: 100vh;
+			background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+			background-size: 400% 400%;
+			overflow: hidden;
+			animation: gradient 1s ease infinite;
+		}
+
+		.tom {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform-style: preserve-3d;
+			animation: rotate 5s ease-in-out infinite;
+		}
+
+		.tom .face {
+			position: absolute;
+		}
+
+		.tom .-front {
+			width: 500px;
+			height: 500px;
+			transform: translate(-50%, -50%) rotateY(0deg) translateZ(250px);
+		}
+
+		.tom .-left {
+			width: 500px;
+			height: 500px;
+			transform: translate(-50%, -50%) rotateY(90deg) translateZ(250px);
+			background: rgba(88, 133, 178, 1);
+		}
+
+		.tom .-top {
+			width: 500px;
+			height: 500px;
+			transform: translate(-50%, -50%) rotateX(90deg) translateZ(250px);
+			background: rgba(108, 153, 198, 1);
+		}
+
+		.tom .-bottom {
+			width: 500px;
+			height: 500px;
+			transform: translate(-50%, -50%) rotateX(-90deg) translateZ(250px);
+			background: rgba(68, 113, 158, 1);
+		}
+
+		.tom .-right {
+			width: 500px;
+			height: 500px;
+			transform: translate(-50%, -50%) rotateY(-90deg) translateZ(250px);
+			background: rgba(88, 133, 178, 1);
+		}
+
+		.tom .-back {
+			width: 500px;
+			height: 500px;
+			transform: translate(-50%, -50%) rotateY(180deg) translateZ(250px);
+			background: rgba(78, 123, 168, 1);
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: rotateX(0deg) scale(10%);
+			}
+
+			50% {
+				transform: rotateX(180deg) rotateY(180deg) scale(900%);
+			}
+
+			100% {
+				transform: rotateX(360deg) rotateY(360deg) scale(10%);
+			}
+		}
+
+		body>img {
+			opacity: 0.5;
+		}
+
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<img width="100%" height="100%" src="fronttom.webp">
+	<div class="tom">
+		<img src="fronttom.webp" class="face -front">
+		<img src="fronttom.webp" class="face -left">
+		<img src="fronttom.webp" class="face -top">
+		<img src="fronttom.webp" class="face -bottom">
+		<img src="fronttom.webp" class="face -right">
+		<img src="fronttom.webp" class="face -back">
+	</div>
+</body>
+
+</html>
