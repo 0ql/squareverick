@@ -15,76 +15,74 @@
 			background-size: 400% 400%;
 			overflow: hidden;
 			animation: gradient 1s ease infinite;
+			display: grid;
+			place-content: center;
+			perspective: 50rem;
+			perspective-origin: center center;
 		}
 
 		.tom {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			position: relative;
+			width: 500px;
+			height: 500px;
+			animation: 5s ease-in-out infinite rotate;
 			transform-style: preserve-3d;
-			animation: rotate 5s ease-in-out infinite;
 		}
 
 		.tom .face {
 			position: absolute;
+			inset: 0;
+			background-image: url("./tom.webp");
+			background-size: 100% 100%;
+			backface-visibility: hidden;
+			transform-origin: center center -250px;
+			translate: 0 0 250px;
 		}
 
 		.tom .-front {
-			width: 500px;
-			height: 500px;
-			transform: translate(-50%, -50%) rotateY(0deg) translateZ(250px);
+			rotate: y 0grad;
 		}
 
 		.tom .-left {
-			width: 500px;
-			height: 500px;
-			transform: translate(-50%, -50%) rotateY(90deg) translateZ(250px);
-			background: rgba(88, 133, 178, 1);
+			rotate: y 100grad;
 		}
 
 		.tom .-top {
-			width: 500px;
-			height: 500px;
-			transform: translate(-50%, -50%) rotateX(90deg) translateZ(250px);
-			background: rgba(108, 153, 198, 1);
+			rotate: x 100grad;
 		}
 
 		.tom .-bottom {
-			width: 500px;
-			height: 500px;
-			transform: translate(-50%, -50%) rotateX(-90deg) translateZ(250px);
-			background: rgba(68, 113, 158, 1);
+			rotate: x -100grad;
 		}
 
 		.tom .-right {
-			width: 500px;
-			height: 500px;
-			transform: translate(-50%, -50%) rotateY(-90deg) translateZ(250px);
-			background: rgba(88, 133, 178, 1);
+			rotate: y 300grad;
 		}
 
 		.tom .-back {
-			width: 500px;
-			height: 500px;
-			transform: translate(-50%, -50%) rotateY(180deg) translateZ(250px);
-			background: rgba(78, 123, 168, 1);
+			rotate: y 200grad;
 		}
 
 		@keyframes rotate {
 			0% {
-				transform: rotateX(0deg) scale(10%);
+				transform: rotateX(0deg);
+				scale: 10%;
 			}
 
 			50% {
-				transform: rotateX(180deg) rotateY(180deg) scale(900%);
+				transform: rotateX(200grad) rotateY(200grad);
+				scale: 200%;
 			}
 
 			100% {
-				transform: rotateX(360deg) rotateY(360deg) scale(10%);
+				transform: rotateX(400grad) rotateY(400grad);
+				scale: 10%;
 			}
 		}
 
-		body>img {
+		body > img {
+			position: absolute;
+			inset: 0;
 			opacity: 0.5;
 		}
 
@@ -105,14 +103,14 @@
 </head>
 
 <body>
-	<img width="100%" height="100%" src="fronttom.webp">
+	<img width="100%" height="100%" src="./tom.webp">
 	<div class="tom">
-		<img src="fronttom.webp" class="face -front">
-		<img src="fronttom.webp" class="face -left">
-		<img src="fronttom.webp" class="face -top">
-		<img src="fronttom.webp" class="face -bottom">
-		<img src="fronttom.webp" class="face -right">
-		<img src="fronttom.webp" class="face -back">
+		<div class="face -front"></div>
+		<div class="face -left"></div>
+		<div class="face -top"></div>
+		<div class="face -bottom"></div>
+		<div class="face -right"></div>
+		<div class="face -back"></div>
 	</div>
 </body>
 
